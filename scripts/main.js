@@ -2,12 +2,15 @@ var DETAIL_IMAGE_SELECTOR = '[data-image-role=\"target\"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var DETAIL_FRAME_SELECTOR = '[data-image-role="frame"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
+var LEFT = '[data-image-role="previous"]';
+var RIGHT = '[data-image-role="next"]';
+
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
 
-var preButton = document.querySelector("previous");
-var nextButton = document.querySelector("next");
+var preButton = document.querySelector("#previous-button");
+var nextButton = document.querySelector("#next-button");
 var currentIndex = 0;
 var thumbLength; 
 
@@ -83,7 +86,7 @@ function titleFromThumb(thumbnail) {
         document.body.classList.remove(HIDDEN_DETAIL_CLASS);
       }
       
-      
+      // cycle back through thumbnails
       function preButtonClick(thumbnails){
         'use strict';
         preButton.addEventListener("click", function(event){
@@ -98,7 +101,7 @@ function titleFromThumb(thumbnail) {
         });
       }
       
-      
+     
       function nextButtonClick(thumbnails){
         'use strict';
         nextButton.addEventListener("click", function(event){
